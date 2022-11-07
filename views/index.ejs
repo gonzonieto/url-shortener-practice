@@ -1,0 +1,30 @@
+<h1>URL Shortener</h1>
+<h2>Welcome!</h2>
+
+<a href="/about">About</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>Short</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for( let i = 0; i < urls.length; i++ ) { %>
+      <tr>
+        <td><%= urls[i]['url'] %></td>
+        <td><%= urls[i]['short'] %></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<h2>Shorten your URL:</h2>
+
+<form action="/new" method="post">
+  <label for="url">Enter the URL:</label>
+  <input type="text" name="url" id="url" required>
+
+  <input type="submit" value="Submit">
+</form>
